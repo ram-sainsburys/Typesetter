@@ -60,6 +60,11 @@ class TypesetterTests: XCTestCase {
         super.tearDown()
     }
     
+    func testConvenienceInit() {
+        let convenienceMixer = Typesetter(bundle: Bundle.module.self)
+        XCTAssertTrue(convenienceMixer.hasSizes)
+    }
+    
     func testConvenienceInitWithNoPath() {
         let convenienceTypesetter = Typesetter(bundle: Bundle())
         XCTAssertFalse(convenienceTypesetter.hasSizes)
